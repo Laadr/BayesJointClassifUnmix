@@ -14,17 +14,22 @@ An exemple of how to use the code is provided in the file runExpl.py.
 Example call: 
 
 `$ mcmc = modelJointClassifUnmix.BayesJointClassifUnmix(gamma=0.1,beta1=beta1,beta2=beta2,preprocBeta=preprocBeta,onlineEstim=True)`
+
 `$ [A_est,Z_est,classif_est,Q_est,psi_est,sigma2_est,activeCluster] = mcmc.sampleModelJointClassifUnmix(im,M,K,C,labels,confidence,Nmc,Nburn=Nburn,mask=mask,equiprobC=bool(equiprobC),printEnable=printEnable,srand=randseed,nproc=nproc)`
 
 ## Class initialization inputs
 
 BayesJointClassifUnmix(gamma, beta1, beta2=0., preprocBeta=None, onlineEstim=True)
 
-gamma:        hyperparamater of inverse-gamma used as prior for gaussian cluster variance (cf paper)
-beta1:        granularity parameter for MRF used as prior for cluster labels z_p. (Used only in Eches model.)
-beta2:        granularity parameter for MRF used as prior for classif labels c_p. Set equal to beta1 if not specified.
-preprocBeta:  granularity parameter for MRF used as prior for cluster labels z_p in the joint classif/unmixing model. Set equal to 0 after burnin period.
-onlineEstim:  (bool) If False, outputs are all the generated samples ; if True, outputs are directly MMSE and MAP estimators introduced in the paper. When processing big images, it is best to use the latter option since storing all samples necessitate extensive memory usage. Default True.
+- gamma:        hyperparamater of inverse-gamma used as prior for gaussian cluster variance (cf paper)
+
+- beta1:        granularity parameter for MRF used as prior for cluster labels z_p. (Used only in Eches model.)
+
+- beta2:        granularity parameter for MRF used as prior for classif labels c_p. Set equal to beta1 if not specified.
+
+- preprocBeta:  granularity parameter for MRF used as prior for cluster labels z_p in the joint classif/unmixing model. Set equal to 0 after burnin period.
+
+- onlineEstim:  (bool) If False, outputs are all the generated samples ; if True, outputs are directly MMSE and MAP estimators introduced in the paper. When processing big images, it is best to use the latter option since storing all samples necessitate extensive memory usage. Default True.
 
 ## I/O for Lagrange et al. method
 
