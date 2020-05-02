@@ -283,6 +283,7 @@ class BayesJointClassifUnmix(object):
         - initPsi:     (optional) initialization of psi_k.
         - initSigma:   (optional) initialization of sigma_k^2.
         - srand:       random seed.
+        - nproc:       number of subprocesses to use for computation (default: 0 - no subprocesses)
 
       Ouput:
         - A_tab:         estimated abundance matrix (or samples if onlineEstim is False).
